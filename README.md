@@ -9,10 +9,10 @@ Its goal was to implement two routing algorithms: one based on shortest paths, s
 ## Description
 
 ShortPathRouter - algorithm using distance vector implemented by dictionary (router_id : (distance, time, intercessory_router_id)) which
-is actualized each time we received distance vector from neighbor. Information from other vectors are processed only when it is up-to-date at least as router receiving these data. In case of deleted edge, we're changing our distance vector when that edge participated in shortest path.
+is actualized each time we received distance vector from neighbor. Information from other vectors are processed only when it is up-to-date. In case of deleted edge, we're changing our distance vector when that edge participated in shortest path.
 
 Whole_graph_router - algorithm grounded on keeping whole graph in every vertex via list of lists.
-When deletion of edge occures, only single bool is changed in each list.
+When deletion of edge occures, only single bool is changed in proper lists.
 Sending a packet takes place with BFS algorithm, using set - used_links and dictionary - predecessors which
 inform in which direction send each packet.
 
